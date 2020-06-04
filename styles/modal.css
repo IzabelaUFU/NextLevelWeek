@@ -25,8 +25,13 @@
 #modal .header{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 48px;
+}
+#modal .header h1{
+    color: white;
+    font-size: 36px;
+    line-height: 42px;
 }
 
 #modal .header a{
@@ -38,11 +43,7 @@
 
     font-size: 0.01px;
 }
-#modal .header h1{
-    color: white;
-    font-size: 36px;
-    line-height: 42px;
-}
+
 
 #modal form label{
     font-size: 16px;
@@ -52,9 +53,10 @@
     margin-bottom: 8px;
 }
 
-#modal form .field{
+#modal form .campoDeBusca{
     display: flex;
 }
+
 #modal form input{
     flex: 1;
 
@@ -67,8 +69,8 @@
     color: #6c6c80;
 }
 #modal form button{
-    width: 72px;
-    height: 72px;
+    width: 52px;
+    height: 52px;
     background-color: var(--primary-color);
     border: 0;
     border-radius: 0 8px 8px 0;
