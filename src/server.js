@@ -6,18 +6,31 @@ const server = express()
 //configurar pasta publica / arquivos estaticos
 server.use(express.static("public"))
 
+//utilizando template engine 
+//pedindo
+const nunjucks = require("nunjucks")
+nunjucks.configure("src/views", {
+    express: server,
+    noCache: true
+})
+
+
 //configurar caminhos da miha aplicação
 
 //pagina inicial
 //req : requisição
 //res : resposta
 server.get("/", (req,res) => {
-    res.sendFile(__dirname + "/views/index.html")
+    return res.render("index.html", {title: "Um título"})
 })
 
 //criar ponto
 server.get("/criar-ponto", (req,res) => {
-    res.sendFile(__dirname + "/views/criar-ponto.html")
+    return res.render("criar-ponto.html")
+})
+
+server.get("/busca", (req,res) => {
+    return res.render("resultados-busca.html")
 })
 
 
