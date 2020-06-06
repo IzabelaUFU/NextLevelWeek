@@ -3,6 +3,9 @@ const express = require("express")
 //executa o express
 const server = express()
 
+//pegar o banco de dados
+const db = require("./database/db")
+
 //configurar pasta publica / arquivos estaticos
 server.use(express.static("public"))
 
@@ -30,7 +33,22 @@ server.get("/criar-ponto", (req,res) => {
 })
 
 server.get("/busca", (req,res) => {
-    return res.render("resultados-busca.html")
+    //pegar os dados do banco de dados
+    db.all(`SELECT * FROM places`, function(err, rows){
+        if (err){
+            return console.log(err)
+        }
+
+        //para ver o numero de dados para mostrar na tela
+        const total = rows.length
+
+        //console.log("Aqui estão seus dados: ")
+        //console.log(rows)
+
+        //mostar a pagina html com os dados do banco 
+        return res.render("resultados-busca.html", {places:rows, total:total})
+    })
+    
 })
 
 

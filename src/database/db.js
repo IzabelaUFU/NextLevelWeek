@@ -5,7 +5,7 @@ const sqlite3 = require("sqlite3").verbose()
 //criar o objeto que ira fazer operações no banco de dados
 const db = new sqlite3.Database("./src/database/database.db")
 
-
+module.exports = db
 //utilizar db para nossas operações
 //serialize - vai rodar um sequencia de codigo
 /*
