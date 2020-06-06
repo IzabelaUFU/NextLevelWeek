@@ -1,25 +1,21 @@
-<!DOCTYPE html>
 
-<html lang="pt_br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ponto de Coleta</title>
+{% extends "layout.html" %}
 
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+{% set pageId = "page-criar-ponto" %} 
 
-        <link rel="stylesheet" href="/styles/main.css">
-        <link rel="stylesheet" href="/styles/criar-ponto.css">
+{% block title %}
+    <title>Ponto de Coleta</title>
+{% endblock title %}
 
-        <link rel="stylesheet" href="/styles/responsive.css">
-    
-    </head>
-    <body>
-        <div id="page-criar-ponto">
+{% block styles %}
+    <link rel="stylesheet" href="/styles/criar-ponto.css">
+{% endblock styles %}  
 
-            {% include "partials/page-header.html" %}
-                
-                <form action="">
+
+{% block content %}
+    {% include "partials/page-header.html" %}
+
+    <form action="">
                     <h1>Cadastro do Ponto de Coleta</h1>
 
                     <fieldset>
@@ -116,8 +112,10 @@
                     </fieldset> 
                     <button type="submit">Cadastrar ponto de Coleta</button>      
                 </form>
-        </div>
-
-        <script src="/scripts/criar-ponto.js"></script>
-    </body>
-</html>
+{% endblock content %}
+                
+{% block scripts %}
+    <script src="/scripts/criar-ponto.js"></script>
+{% endblock scripts %}                
+        
+        
