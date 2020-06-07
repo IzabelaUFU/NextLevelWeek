@@ -9,6 +9,9 @@ const db = require("./database/db")
 //configurar pasta publica / arquivos estaticos
 server.use(express.static("public"))
 
+//habilitar uso do req.body
+server.use(express.urlencoded({extended: true}))
+
 //utilizando template engine 
 //pedindo
 const nunjucks = require("nunjucks")
@@ -30,6 +33,40 @@ server.get("/", (req,res) => {
 //criar ponto
 server.get("/criar-ponto", (req,res) => {
     return res.render("criar-ponto.html")
+})
+
+server.post("/savepoint", (req, res) =>{
+    
+    //return res.send("ok") teste
+    //req.body: o corpo do nosso form
+    //console.log(req.body)
+
+    //inserir dados do banco
+    const query = `
+        INSERT INTO places (
+            image, name, address, address2, state, city, items
+        ) VALUES (
+            ?,?,?,?,?,?,?
+        );
+    `
+    const values = [
+        req.body.image, req.body.name, req.body.address, req.body.address2, req.body.state, req.body.city, req.body.items 
+    ]
+
+    function afterInsertData(err){
+        if(err){
+            console.log("err")
+            return res.send('Erro no Cadastro. Tente novamente')
+        }
+        console.log("Cadastrado com Sucesso")
+        //console.log(this)
+
+        //pagina de sucesso
+        return res.render("criar-ponto.html", {saved:true})
+    }
+
+    db.run(query, values, afterInsertData)
+
 })
 
 server.get("/busca", (req,res) => {

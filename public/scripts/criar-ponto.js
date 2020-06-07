@@ -65,7 +65,7 @@ function handleSelectedItem(item){
     itemLi.classList.toggle("selected")
 
     const itemId = itemLi.dataset.id
-    //console.log(itemId)
+    console.log(itemId)
 
     //verificar se existem itens selecionados
     //se sim pegar os itens selecionados
@@ -88,7 +88,8 @@ function handleSelectedItem(item){
        selectedItems.push(itemId)
 
     }
-    //console.log(selectedItems)
+    console.log(selectedItems)
+
     //atualizar o input escondido com os itens selecionados
     itensColetados.value = selectedItems
 }
