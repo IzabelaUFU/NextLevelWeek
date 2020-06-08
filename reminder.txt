@@ -1,11 +1,11 @@
+Instalar nodeJS
 
 Comandos usados para criar servidor
+  npm init -y -> cria package.json/incializar node.js
+  npm install express -> instalar micro-framework 'express' (configura rota e interpreta parâmetros)
 
-npm init -y
-cria package.json
+Nodemon -> npm install nodemon -D
+Atualiza automaticamente o servidorapenas na dependência de desenvolvimento, 
+ao remover -D instala para todo servidor
 
-npm install express
-
-Template Engine
-
-instalar nunjucks
+Template Engine -> instalar nunjucks
