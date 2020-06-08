@@ -4,7 +4,7 @@
 ### A Next Level Week apresentou conteúdo sobre:
 - *HTML*
 - *CSS*
-- *Node*
+- *NodeJS*
 - *JavaScript*
 
 **_Ecoleta - Seu Marketplace de coleta de resíduos_**
