@@ -5,7 +5,7 @@
 - *HTML*
 - *CSS*
 - *Node*
-- *JovaScript*
+- *JavaScript*
 
 **_Ecoleta - Seu Marketplace de coleta de resíduos_**
 
